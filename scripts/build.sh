@@ -4,6 +4,6 @@ set -euo pipefail
 
 cd ./themes/akari
 
-bun install
+"$HOME/.bun/bin/bun" install
 
-bun run build:css
+"$HOME/.bun/bin/bun" run build:css
