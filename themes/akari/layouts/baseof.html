@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}" class="scroll-smooth">
 <head>
   {{ partial "head.html" . }}
 </head>
-<body>
-  <header>
-    {{ partial "header.html" . }}
+<body class="bg-white text-zinc-900 dark:bg-black dark:text-zinc-100 antialiased min-h-screen flex flex-col transition-colors duration-300 font-mono">
+  <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/90 dark:bg-black/90 border-b border-zinc-200 dark:border-zinc-800">
+    <div class="container mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-6">
+      {{ partial "header.html" . }}
+    </div>
   </header>
-  <main>
+
+  <main class="flex-grow container mx-auto px-6 py-16 max-w-4xl">
     {{ block "main" . }}{{ end }}
   </main>
-  <footer>
-    {{ partial "footer.html" . }}
+
+  <footer class="border-t border-zinc-200 dark:border-zinc-800 py-10 bg-zinc-50 dark:bg-black">
+    <div class="container mx-auto px-6 text-center text-zinc-700 dark:text-zinc-400 text-xs tracking-wider uppercase">
+      {{ partial "footer.html" . }}
+    </div>
   </footer>
 </body>
 </html>

@@ -1,0 +1,14 @@
+{
+  "name": "akari",
+  "module": "index.ts",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "watch:css": "tailwindcss -i ./assets/index.css -o ./assets/dist/index.css --watch",
+    "build:css": "tailwindcss -i ./assets/index.css -o ./assets/dist/index.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "tailwindcss": "^4.2.1"
+  }
+}

@@ -1,1 +1,10 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+  <p>[SYS] &copy; {{ now.Year }} {{ site.Title }}</p>
+  <p class="flex items-center">
+    STATUS: ONLINE
+    <span class="relative flex h-2 w-2 ml-3">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+    </span>
+  </p>
+</div>

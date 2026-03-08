@@ -1,7 +1,25 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
+  <div class="content mb-16">
+    <h1 class="text-3xl font-bold mb-6 tracking-tight uppercase">Tag: {{ .Title }}</h1>
+    {{ .Content }}
+  </div>
+
+  <div class="space-y-12">
+    {{ range .Pages }}
+      <article class="group relative flex flex-col items-start p-4 rounded-lg -mx-4 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50">
+        <time datetime="{{ .Date | time.Format "2006-01-02" }}" class="text-xs text-slate-400 dark:text-slate-500 mb-2 font-bold tracking-tighter">
+          [{{ .Date | time.Format "2006.01.02" }}]
+        </time>
+        <h2 class="text-lg font-bold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+          <a href="{{ .RelPermalink }}">
+            <span class="absolute -inset-x-0 -inset-y-0 z-20"></span>
+            <span class="relative z-10">{{ .LinkTitle }}</span>
+          </a>
+        </h2>
+        <p class="mt-2 text-slate-500 dark:text-slate-400 text-sm line-clamp-2 italic">
+          {{ .Summary }}
+        </p>
+      </article>
+    {{ end }}
+  </div>
 {{ end }}

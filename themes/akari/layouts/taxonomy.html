@@ -1,7 +1,15 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
+  <div class="content mb-16">
+    <h1 class="text-3xl font-bold mb-6 tracking-tight uppercase">{{ .Title }}</h1>
+    {{ .Content }}
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {{ range .Pages }}
+      <a href="{{ .RelPermalink }}" class="block p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-emerald-600 dark:hover:border-emerald-500 hover:bg-zinc-100 dark:hover:bg-zinc-900/30 transition-all group">
+        <h2 class="text-sm font-bold uppercase tracking-widest group-hover:text-emerald-600 dark:group-hover:text-emerald-400">{{ .LinkTitle }}</h2>
+        <p class="text-[10px] text-zinc-400 dark:text-zinc-600 mt-4 font-bold">COUNT: {{ len .Pages }}</p>
+      </a>
+    {{ end }}
+  </div>
 {{ end }}

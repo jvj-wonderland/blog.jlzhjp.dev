@@ -1,5 +1,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary }}{{ else }}{{ site.Params.description | default site.Title }}{{ end }}">
+<meta name="view-transition" content="same-origin">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+<style>
+  @font-face {
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 700;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/roboto-mono:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+  }
+</style>
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
