@@ -2,6 +2,7 @@
 <meta name="viewport" content="width=device-width">
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary }}{{ else }}{{ site.Params.description | default site.Title }}{{ end }}">
 <meta name="view-transition" content="same-origin">
+<link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 <style>
   @font-face {

@@ -1,6 +1,6 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://jlzhjp.dev/'
 languageCode = 'en-US'
-title = 'My New Hugo Site'
+title = 'jlzhjp.dev'
 
 [menus]
   [[menus.main]]

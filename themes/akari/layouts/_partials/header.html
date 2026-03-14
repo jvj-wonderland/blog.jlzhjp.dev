@@ -1,4 +1,5 @@
-<a href="{{ site.BaseURL }}" class="text-xl font-bold tracking-tight hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors uppercase">
-  {{ site.Title }}
+<a href="{{ site.BaseURL }}" class="text-xl font-bold tracking-tight hover:text-emerald-500 transition-all flex items-center group retro-glow">
+  <span class="text-emerald-600 dark:text-emerald-500 mr-2 opacity-80 group-hover:opacity-100 transition-opacity">&gt;</span>
+  {{ site.Title }}<span class="terminal-cursor ml-1">_</span>
 </a>
 {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
